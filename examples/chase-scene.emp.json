@@ -1,0 +1,59 @@
+{
+  "version": "0.1",
+  "project": {
+    "id": "demo-001",
+    "title": "Chase Scene Demo"
+  },
+  "media": {
+    "src": "movie.mov",
+    "duration_ms": 92340,
+    "fps": 24
+  },
+  "tracks": [
+    {
+      "id": "haptic-seat",
+      "type": "haptic",
+      "target": "seat.main",
+      "events": [
+        {
+          "t_ms": 1250,
+          "dur_ms": 180,
+          "intensity": 0.72,
+          "shape": "pulse"
+        },
+        {
+          "t_ms": 2880,
+          "dur_ms": 600,
+          "intensity": 0.45,
+          "shape": "rumble"
+        }
+      ]
+    },
+    {
+      "id": "air-front",
+      "type": "air",
+      "target": "fan.front",
+      "events": [
+        {
+          "t_ms": 3100,
+          "dur_ms": 900,
+          "intensity": 0.6,
+          "shape": "ramp_up"
+        }
+      ]
+    },
+    {
+      "id": "light-ambient",
+      "type": "light",
+      "target": "light.ambient",
+      "events": [
+        {
+          "t_ms": 4200,
+          "dur_ms": 1200,
+          "intensity": 0.4,
+          "shape": "fade"
+        }
+      ]
+    }
+  ]
+}

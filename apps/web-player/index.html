@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EMP.MOV Web Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>EMP.MOV Web Player</h1>
+    <p>Load a video file and a .emp.json sidecar.</p>
+  </header>
+
+  <section class="controls">
+    <label>Video file <input id="videoFile" type="file" accept="video/*"></label>
+    <label>EMP sidecar <input id="empFile" type="file" accept=".json,.emp.json"></label>
+    <label>Global offset (ms) <input id="offset" type="number" value="0"></label>
+  </section>
+
+  <section class="player">
+    <video id="video" controls></video>
+    <div class="panel">
+      <h2>Tracks</h2>
+      <pre id="tracks">No file loaded.</pre>
+    </div>
+    <div class="panel">
+      <h2>Event log</h2>
+      <pre id="log">Waiting...</pre>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

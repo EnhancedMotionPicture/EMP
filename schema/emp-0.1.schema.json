@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EMP.MOV Sidecar",
+  "type": "object",
+  "required": [
+    "version",
+    "project",
+    "media",
+    "tracks"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "project": {
+      "type": "object",
+      "required": [
+        "id",
+        "title"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "media": {
+      "type": "object",
+      "required": [
+        "src",
+        "duration_ms",
+        "fps"
+      ],
+      "properties": {
+        "src": {
+          "type": "string"
+        },
+        "duration_ms": {
+          "type": "number"
+        },
+        "fps": {
+          "type": "number"
+        }
+      }
+    },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "target",
+          "events"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "haptic",
+              "air",
+              "light"
+            ]
+          },
+          "target": {
+            "type": "string"
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "t_ms",
+                "dur_ms",
+                "intensity",
+                "shape"
+              ],
+              "properties": {
+                "t_ms": {
+                  "type": "number"
+                },
+                "dur_ms": {
+                  "type": "number"
+                },
+                "intensity": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "shape": {
+                  "type": "string"
+                },
+                "freq_hz": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
